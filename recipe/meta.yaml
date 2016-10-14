@@ -1,0 +1,30 @@
+{% set name = "topoflow-snow-energy-balance-csdms" %}
+{% set version = "3.4" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/csdms/topoflow-bridge
+
+requirements:
+  build:
+    - bmi-babel
+    - topoflow
+  run:
+    - bmi-babel
+    - topoflow
+
+test:
+  requires:
+    - pymt
+    - bmi-tester
+
+about:
+  home: http://csdms.colorado.edu/wiki/Model_help:TopoFlow-Snowmelt-Energy_Balance
+  license: Apache
+  summary: |
+    SnowEnergyBalance is a snowmelt process component included
+    within the spatially distributed hydrologic model TopoFlow. It uses
+    an energy balance technique for modeling snowmelt.
